@@ -1,35 +1,28 @@
-/*  Copyright 2012-2016 Sven "underscorediscovery" Bergström
-    
-    written by : http://underscorediscovery.ca
-    written for : http://buildnewgames.com/real-time-multiplayer/
-    
-    MIT Licensed.
-*/
 
-	//A window global for our game root variable.
+	//Una ventana global para la raiz del juego.
 var game = {};
 
-	//When loading, we store references to our
-	//drawing canvases, and initiate a game instance.
+	//Cuando está cargando, almacena referencias a canvas
+	//e inicializa una instancia de juego.
 window.onload = function(){
 
-		//Create our game client instance.
+		//Crea una instancia cliente de juego
 	game = new game_core();
 
-			//Fetch the viewport
+			//recupera el puerto
 		game.viewport = document.getElementById('viewport');
 			
-			//Adjust their size
+			//Ajusta el tamaño
 		game.viewport.width = game.world.width;
 		game.viewport.height = game.world.height;
 
-			//Fetch the rendering contexts
+			//Recupera contexto de renderización
 		game.ctx = game.viewport.getContext('2d');
 
-			//Set the draw style for the font
+			//Setea el estilo de fuente
 		game.ctx.font = '11px "Helvetica"';
 
-		//Finally, start the loop
+		//Finaalmente, inicia el loop
 	game.update( new Date().getTime() );
 
 }; //window.onload
